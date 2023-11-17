@@ -1,0 +1,302 @@
+.layout-phien-dau-gia {
+  visibility: visible;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.68);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  .contaier-phien-dau-gia {
+    position: relative;
+    width: 80%;
+    height: 90vh;
+    background: #212121;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+
+    .close-client-phien {
+      font-size: 3rem;
+      color: white;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      z-index: 10;
+      &:hover {
+        color: red;
+      }
+    }
+
+    .thong-tin-dinh-gia {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 5px 0 3px rgba(0, 0, 0, 0.515);
+
+      .show-final-price {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        z-index: 5;
+        background: #212121;
+        .text-linear-final-price {
+          font-family: "DM Mono", monospace;
+          font-size: 3.5rem;
+          font-weight: 600;
+          background: linear-gradient(to right, #ffffff, #ff0000);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          // text-fill-color: transparent;
+          animation: colorFinalPrice 1s linear infinite ;
+          transition: all 0.2s linear;
+        }
+      }
+      .text-w-dm {
+        color: white;
+        font-size: 2rem;
+        font-family: "DM Mono", monospace;
+      }
+      .time-count {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 10%;
+      }
+      .title-container-left {
+        font-size: 2rem;
+        height: 5%;
+        font-family: "DM Mono", monospace;
+        color: white;
+        transform: translateY(10px);
+      }
+      .border-bottom {
+        width: 80%;
+        height: 1px;
+        background-color: white;
+      }
+      .container-chill-thong-tin-phien-dinh-gia {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-between;
+        align-items: center;
+        // gap: 20%;
+        .container-chill-left-img {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin-left: 5px;
+          }
+        }
+        .container-chill-right-detail {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: center;
+
+          .detail-phien {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            width: 100%;
+
+            .client-input-dinh-gia {
+              background-color: transparent;
+              outline: none;
+              border: none;
+              color: white;
+              width: 90%;
+              height: 40px;
+              margin-left: 10px;
+              font-size: 2rem;
+              font-family: "DM Mono", monospace;
+              border-bottom: 1px solid white;
+            }
+          }
+        }
+      }
+      .butt-close-phien {
+        position: relative;
+        width: 90%;
+        height: 40px;
+        background-color: deepskyblue;
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 600;
+        font-family: "DM Mono", monospace;
+        border-radius: 5px;
+        // transform: translateY(50px);
+        &:hover {
+          background: orangered;
+        }
+      }
+      .butt-done-client {
+        height: 15%;
+        width: 90%;
+        height: 40px;
+        background-color: deepskyblue;
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 600;
+        font-family: "DM Mono", monospace;
+        border-radius: 5px;
+        // transform: translateY(50px);
+
+        &:hover {
+          background: orangered;
+        }
+      }
+    }
+
+    .container-right {
+      width: 30%;
+      position: relative;
+      .title-container-left {
+        font-size: 2rem;
+        height: 5%;
+        font-family: "DM Mono", monospace;
+        color: white;
+      }
+      .refresh {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        z-index: 10;
+        background-color: rgba(106, 104, 104, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        i {
+          font-size: 4rem;
+          color: white;
+          &:hover {
+            animation: loopiconfresh 2s linear infinite;
+          }
+        }
+      }
+    }
+    .container-dinh-gia-client {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: rgb(35, 36, 35);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgb(0, 0, 0);
+      }
+
+      .client-dinh-gia {
+        span {
+          font-family: "DM Mono", monospace;
+          color: white;
+          font-size: 1.8rem;
+          font-family: "DM Mono", monospace;
+        }
+        .name-client {
+          color: cyan;
+          margin-right: 10px;
+          font-size: 1.8rem;
+          font-family: "DM Mono", monospace;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.show-time-out {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 200px;
+  height: 40px;
+  background-color: rgb(210, 9, 9);
+  color: white;
+  font-family: "DM Mono", monospace;
+  font-size: 2.5rem;
+  font-weight: 600;
+  z-index: 10;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  transform: translateX(-200px);
+  animation: transShowPriceFinal 3s linear ;
+  animation-fill-mode: both;
+}
+
+@keyframes loopiconfresh {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes colorFinalPrice {
+  0% {
+    background: linear-gradient(to right, #ffffff, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  100%{
+    background: linear-gradient(to right, #ff0000, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+  }
+}
+@keyframes transShowPriceFinal{
+  0%{
+  transform: translateX(-200px);
+  }
+  25%{
+  transform: translateX(-150px);
+  }
+  50%{
+  transform: translateX(-100px);
+  }
+  70%{
+  transform: translateX(-50px);
+  }
+  100%{
+  transform: translateX(0px);
+  }
+}

@@ -1,0 +1,11 @@
+.layout-list-product{
+    // width: 100%;
+    min-height: 91vh;
+    background-color:rgba(49, 48, 48, 0.6);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+    // justify-content: center;
+    padding:5vh;
+}

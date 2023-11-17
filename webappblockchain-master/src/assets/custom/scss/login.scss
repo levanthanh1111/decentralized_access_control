@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lobster&display=swap");
+.layout-login {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 70px;
+  background-image: url("../../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .layout-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .contaiter-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 100%;
+      height: 80vh;
+      align-items: center;
+      #text-review {
+        color: white;
+        font-family: "DM Mono", monospace;
+        font-size: 1.8rem;
+    }
+    .butt-infapp{
+        background: rgba(255, 255, 255, 0.27);
+        width: 40%;
+        height: 50px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title-if{
+            width: fit-content;
+            font-family: "DM Mono", monospace;
+            height: fit-content;
+            margin:0;
+            padding: 0;
+            font-size: 2rem;
+        }
+        // padding-top: 1rem;
+        transition: transform 0.2 linear;
+        &:hover{
+            background-color: rgba(0, 191, 255, 0.5);
+            transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

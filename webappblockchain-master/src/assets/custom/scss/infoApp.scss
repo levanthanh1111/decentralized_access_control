@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lobster&display=swap");
+
+.info-app {
+  width: 100%;
+  min-height: 80vh;
+  .component-title-app {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0 0 0;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    .title {
+      font-family: "Lobster", cursive;
+      font-size: 4rem;
+    }
+  }
+  .text-dn {
+    font-family: "DM Mono", monospace;
+    font-size: 3rem;
+  }
+  .container-info-list {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 100px 0 100px 0;
+    img {
+      width: 60%;
+    }
+    .list-text {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+        justify-content: center;
+      .text {
+        display: flex;
+        flex-direction: row;
+        i {
+          color: #00ff37;
+          font-size: 3rem;
+          margin-right: 5px;
+        }
+        span {
+          font-size: 2.5rem;
+          font-family: "DM Mono", monospace;
+        }
+      }
+    }
+  }
+}

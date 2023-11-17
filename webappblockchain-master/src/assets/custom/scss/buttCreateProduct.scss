@@ -1,0 +1,88 @@
+.butt-create-product{
+    // admin 
+    visibility: hidden;
+
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background-color: rgb(5, 245, 57);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 3px 3px 10px rgb(5, 245, 57);
+    i{
+        color: black;
+        font-size: 3.5rem;
+    }
+    
+    &:hover{
+        background-color:orangered;
+        box-shadow: 3px 3px 10px orangered;
+       i{
+        color: white;
+       }
+    }
+}
+.butt-create-product2{
+    // admin
+    visibility: hidden;
+
+    position: fixed;
+    bottom: 40px;
+    right: 120px;
+    background-color: rgb(5, 245, 57);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 3px 3px 10px rgb(5, 245, 57);
+    i{
+        color: black;
+        font-size: 3.5rem;
+    }
+
+    &:hover{
+        background-color:orangered;
+        box-shadow: 3px 3px 10px orangered;
+        i{
+            color: white;
+        }
+    }
+}
+
+.butt-create-product3{
+    // admin
+    visibility: hidden;
+
+    position: fixed;
+    bottom: 40px;
+    right: 200px;
+    background-color: rgb(5, 245, 57);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 3px 3px 10px rgb(5, 245, 57);
+    i{
+        color: black;
+        font-size: 3.5rem;
+    }
+
+    &:hover{
+        background-color:orangered;
+        box-shadow: 3px 3px 10px orangered;
+        i{
+            color: white;
+        }
+    }
+}
