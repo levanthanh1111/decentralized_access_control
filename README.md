@@ -1,2 +1,2 @@
 # decentralized_access_control
-![img.png](img.png)
+![img_1.png](img_1.png)
