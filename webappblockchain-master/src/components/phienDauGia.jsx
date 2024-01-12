@@ -70,7 +70,6 @@ const phienDauGia = (props) => {
   }
 
   function postPrice(e) {
-    // console.log(valuePrice);
     props.connecttransaction.addPrice(
       props.productHash,
       valuePrice,

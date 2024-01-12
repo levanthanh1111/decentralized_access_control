@@ -3,13 +3,8 @@
  */
 
 const Web3 = require('web3');
-// import Web3 from 'web3'
 const { CONTRACT_ADDRESS } = require('./constant');
-// const Valuation = require('./contracts/Valuation.json')
 const Valua = require('./contracts/Valua.json')
-
-//const web3 = new Web3('http://127.0.0.1:7545');
-//const smartContract = new web3.eth.Contract(Valuation.abi, CONTRACT_ADDRESS);
 class Web3Connection {
     constructor() {
         this.web3 = new Web3('http://127.0.0.1:7545');
@@ -17,9 +12,6 @@ class Web3Connection {
 
     }
 
-    /** Get account from metamask **/
-
-  
     async getAccount() {
         const accounts = await this.web3.eth.request({ method: 'eth_requestAccounts' });
         const address = accounts[0];

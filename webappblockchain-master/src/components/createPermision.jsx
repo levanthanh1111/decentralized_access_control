@@ -38,26 +38,10 @@ const createPermisson = (props) => {
   function handlePostProduct() {
     setStatusComponentCreat(false);
     props.getstatuscompcreate(statusComponentCreat);
-    // console.log(props.publickey);
-
     props.connecttransaction.grantPermissionToCreateProduct(
         detailProduct.description,
         props.address
     );
-    // call createProduct (prodName, hashimg,address)
-    // props.connecttransaction.createProduct(
-    //   detailProduct.nameproduct,
-    //   hashImg,
-    //   props.address,
-    //   detailProduct.description,
-    //
-    // );
-    // props.connecttransaction.createValuation(
-    //   hashImg,
-    //   detailProduct.timeout,
-    //   props.address
-    // );
-    
   }
   
   function handleClose() {

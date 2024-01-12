@@ -22,15 +22,10 @@ contract Valuation {
         address[] evaluators;
         uint timeEnd;
     }
-
     mapping(address => User) public users;
     mapping(bytes32 => Product) public products;
-
-
-     // Mapping store data user
     mapping(address => bool) public hasPermissionToCreateProduct;
 
-    // Modifier permission only admin
     modifier onlyAdmin() {
         require(msg.sender == administrator, "Only administrator can perform this action");
         _;
@@ -41,12 +36,10 @@ contract Valuation {
         _;
     }
 
-    // Grant permission
     function grantPermissionToCreateProduct(address user) public onlyAdmin {
         hasPermissionToCreateProduct[user] = true;
     }
 
-    // Revoke permission
     function revokePermissionToCreateProduct(address user) public onlyAdmin {
         hasPermissionToCreateProduct[user] = false;
     }
@@ -59,7 +52,7 @@ contract Valuation {
     constructor() {
         administrator = msg.sender;
     }
-    // Register account
+
     function register(string memory name) public {
         require(!users[msg.sender].registered, "User already registered");
         require(bytes(name).length > 0, "your name, pls"); //yêu cầu không để trống tên
@@ -68,9 +61,8 @@ contract Valuation {
         users[msg.sender] = User(true, name, userDeviation, sessionJoined);
     }
 
-    // Just admin and creator create product
     function createProduct(bytes32 productHash, string memory name, string memory ipfs, string memory description) public onlyAdminOrAllowedUser {
-    //    require(msg.sender == administrator, "Only administrator can create product");
+        //    require(msg.sender == administrator, "Only administrator can create product");
         require(!products[productHash].exists, "Product already exists");
         bool exists = true;
         bool haveFinalPrice = false;
@@ -84,9 +76,8 @@ contract Valuation {
         productCount ++;
     }
 
-    // Just admin and creator create valuation
     function createValuation(bytes32 productHash, uint timeSet) public onlyAdminOrAllowedUser {
-    //    require(msg.sender == administrator, "Only administrator can create Valuation");
+        //    require(msg.sender == administrator, "Only administrator can create Valuation");
         require(products[productHash].exists, "Product does not exist");
         require(!products[productHash].inValuation, "Product still in valuation");
         products[productHash].inValuation = true;
@@ -107,7 +98,7 @@ contract Valuation {
                 products[productHash].prices[j] = price;
                 check = true;
                 break;
-            }         
+            }
         }
         if(!check) {
             products[productHash].evaluatorsCount ++;
@@ -125,14 +116,14 @@ contract Valuation {
         uint B = 0;
         for (uint j = 0; j < products[productHash].evaluatorsCount; j++){
             A += products[productHash].prices[j] * (100 - users[products[productHash].evaluators[j]].userDeviation);
-            B += users[products[productHash].evaluators[j]].userDeviation; 
+            B += users[products[productHash].evaluators[j]].userDeviation;
         }
         products[productHash].finalPrice = (A) / (100 * products[productHash].evaluatorsCount - B);
         finalPrice = (A) / (100 * products[productHash].evaluatorsCount - B);
     }
 
     function newUserDeviation(bytes32 productHash) private {
-        uint P = products[productHash].finalPrice;      
+        uint P = products[productHash].finalPrice;
         for (uint j = 0; j < products[productHash].evaluatorsCount; j++){
             uint dNew;
             uint d;
@@ -150,24 +141,21 @@ contract Valuation {
         }
     }
 
-    // Just admin
     function closeValuation(bytes32 productHash) public {
         require(msg.sender == administrator, "Only administrator can close valuation!");
         require(products[productHash].exists, "Product does not exist!");
         require(products[productHash].inValuation, "no valuation for this product!");
-        // thêm yêu cầu tính giá cuối cùng trước khi đóng phiên
+        // caculateFinalPrice before closeValuation
         require(products[productHash].finalPrice != 0, "Pls caculate finalPrice before close the valuation!");
         newUserDeviation(productHash);
         products[productHash].inValuation = false;
         numberOfProductInValuation --;
     }
-    
-    // check admin and createtor.
+
     function isAdministrator(address account) public view returns (bool) {
         return account == administrator || hasPermissionToCreateProduct[account];
     }
 
-    //check admin
     function checkAdmin(address account) public view returns (bool) {
         return account == administrator;
     }
@@ -180,7 +168,7 @@ contract Valuation {
                 if (temp == id) {
                     _hash = productArray[j];
                     //_name = products[productArray[j]].name;
-                } 
+                }
                 temp++;
             }
         }

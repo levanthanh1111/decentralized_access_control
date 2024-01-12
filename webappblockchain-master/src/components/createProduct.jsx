@@ -38,22 +38,17 @@ const createProduct = (props) => {
   function handlePostProduct() {
     setStatusComponentCreat(false);
     props.getstatuscompcreate(statusComponentCreat);
-    // console.log(props.publickey);
-
-    // call createProduct (prodName, hashimg,address)
     props.connecttransaction.createProduct(
       detailProduct.nameproduct,
       hashImg,
       props.address,
       detailProduct.description,
-     
     );
     props.connecttransaction.createValuation(
       hashImg,
       detailProduct.timeout,
       props.address
     );
-    
   }
   
   function handleClose() {
